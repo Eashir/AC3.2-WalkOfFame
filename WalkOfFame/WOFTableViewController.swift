@@ -9,8 +9,9 @@
 import UIKit
 
 class WOFTableViewController: UITableViewController {
+    
     var walks = [Walk]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let resourceURL = getResourceURL(from: "walk_of_fame", withExt: "json"),
@@ -29,23 +30,24 @@ class WOFTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.walks.count
     }
     
-    /*
+    
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-     
+     let cell = tableView.dequeueReusableCell(withIdentifier: "walkCell", for: indexPath)
+        
+        cell.textLabel?.text = self.walks[indexPath.row].designer
      // Configure the cell...
      
      return cell
      }
-     */
+ 
     
     internal func getResourceURL(from fileName: String, withExt ext: String) -> URL? {
         let fileURL: URL? = Bundle.main.url(forResource: fileName, withExtension: ext)
@@ -58,10 +60,30 @@ class WOFTableViewController: UITableViewController {
         return fileData
     }
     
+    
     internal func getWalks(from jsonData: Data) -> [Walk]? {
         // replace this return with a full implementation
-        return nil
+        do {
+            let walkJSONData: Any = try JSONSerialization.jsonObject(with: jsonData, options: [])
+            if let walkArrayDict = walkJSONData as? [String:Any] {
+                if let allWalkArray = walkArrayDict["data"] as? [[String: String]] {
+                    for el in allWalkArray {
+                        if let w = Walk(withDict: el) {
+                            walks.append(w)
+                        }
+                    }
+                }
+            }
+        }
+        catch let error as NSError {
+            // JSONSerialization doc specficially says an NSError is returned if JSONSerialization.jsonObject(with:options:) fails
+            print("Error occurred while parsing data: \(error.localizedDescription)")
+        }
+        
+        print("Function Array Count \(walks.count)")
+        return walks
     }
+
 
     /*
     // MARK: - Navigation

@@ -13,8 +13,8 @@
 		1EE6D1591DB6818C006EBDBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EE6D1581DB6818C006EBDBF /* Assets.xcassets */; };
 		1EE6D15C1DB6818C006EBDBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EE6D15A1DB6818C006EBDBF /* LaunchScreen.storyboard */; };
 		1EE6D1641DB681E4006EBDBF /* WOFTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE6D1631DB681E4006EBDBF /* WOFTableViewController.swift */; };
-		1EE6D1661DB68228006EBDBF /* walk_of_fame.json in Resources */ = {isa = PBXBuildFile; fileRef = 1EE6D1651DB68228006EBDBF /* walk_of_fame.json */; };
 		1EE6D1681DB68436006EBDBF /* Walk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE6D1671DB68436006EBDBF /* Walk.swift */; };
+		202B74421DBD15D100AFF4A1 /* walk_of_fame.json in Resources */ = {isa = PBXBuildFile; fileRef = 202B74411DBD15D100AFF4A1 /* walk_of_fame.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +26,8 @@
 		1EE6D15B1DB6818C006EBDBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1EE6D15D1DB6818C006EBDBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EE6D1631DB681E4006EBDBF /* WOFTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WOFTableViewController.swift; sourceTree = "<group>"; };
-		1EE6D1651DB68228006EBDBF /* walk_of_fame.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = walk_of_fame.json; sourceTree = "<group>"; };
 		1EE6D1671DB68436006EBDBF /* Walk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Walk.swift; sourceTree = "<group>"; };
+		202B74411DBD15D100AFF4A1 /* walk_of_fame.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = walk_of_fame.json; path = ../../walk_of_fame.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +60,11 @@
 		1EE6D1501DB6818C006EBDBF /* WalkOfFame */ = {
 			isa = PBXGroup;
 			children = (
+				202B74411DBD15D100AFF4A1 /* walk_of_fame.json */,
 				1EE6D1511DB6818C006EBDBF /* AppDelegate.swift */,
 				1EE6D1531DB6818C006EBDBF /* ViewController.swift */,
 				1EE6D1551DB6818C006EBDBF /* Main.storyboard */,
 				1EE6D1631DB681E4006EBDBF /* WOFTableViewController.swift */,
-				1EE6D1651DB68228006EBDBF /* walk_of_fame.json */,
 				1EE6D1581DB6818C006EBDBF /* Assets.xcassets */,
 				1EE6D15A1DB6818C006EBDBF /* LaunchScreen.storyboard */,
 				1EE6D15D1DB6818C006EBDBF /* Info.plist */,
@@ -132,7 +132,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EE6D1661DB68228006EBDBF /* walk_of_fame.json in Resources */,
+				202B74421DBD15D100AFF4A1 /* walk_of_fame.json in Resources */,
 				1EE6D15C1DB6818C006EBDBF /* LaunchScreen.storyboard in Resources */,
 				1EE6D1591DB6818C006EBDBF /* Assets.xcassets in Resources */,
 				1EE6D1571DB6818C006EBDBF /* Main.storyboard in Resources */,
@@ -311,6 +311,7 @@
 				1EE6D1621DB6818C006EBDBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
